@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>Orders</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/styles.css">  
+</head>
+<body>
+ 
+<!--  NAVBAR  -->
+<div class="navbar">	
+	<div class ="nav-left">
+		<div class ="nav-logo"><a href="/">BULL.EX</a></div>			
+		<form action="/orders" method="get"><button type="submit">Spot Trade</button></form> 			
+		<a th:href="@{/newforwardorder}"><button>Forward Trade</button></a>
+		<a th:href="@{/activeforwardtradesdashboard}"><button>Active Forward Trades</button></a>
+		<a th:href="@{/pendingforwardtradesdashboard}"><button>Pending Forward Trades</button></a>
+	</div>
+	
+	<div class ="nav-right">
+		<form action="/transferfunds" method="get"><button  type="submit"> <span class="glyphicon glyphicon-user"></span> Wallet </button></form>      
+        <form action="/logout" method="get"><button  type="submit"> <span class="glyphicon glyphicon-log-out"></span> Logout </button></form>
+	</div>	
+</div>
+<!--  NAVBAR  --> 
+ 
+<!---------- ALERT -- -------->
+<div class="row alert">
+      <div th:if="${alert}" th:text="${alert}"></div>	
+</div>
+<!---------- ALERT ---------->
+ 
+<!---------- CONTENT ---------->
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav"></div>    
+    <div class="col-sm-8 text-left"> 
+ 
+<!---------- OPEN ORDERS ---------->
+	<br><br>   
+	<div class="open-orders">
+	<table>
+		<thead>
+    	<tr>
+      <th>Date</th>
+      <th>Currency Pair</th>
+      <th>Buy/Sell</th>
+      <th>Units</th>
+      <th>Price</th>
+      <th>Profit/Loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2022-01-01</td>
+      <td>EUR/USD</td>
+      <td>Buy</td>
+      <td>1000</td>
+      <td>1.1250</td>
+      <td>+50.00</td>
+    </tr>
+    <tr>
+      <td>2022-02-01</td>
+      <td>USD/JPY</td>
+      <td>Sell</td>
+      <td>500</td>
+      <td>110.50</td>
+      <td>-25.00</td>
+    </tr>
+    <tr>
+      <td>2022-03-01</td>
+      <td>GBP/EUR</td>
+      <td>Buy</td>
+      <td>2000</td>
+      <td>1.1500</td>
+      <td>+100.00</td>
+    </tr>
+  </tbody>
+</table>
+ 
+	</div>
+ 
+ 
+      <br> <br>
+     
+ 
+ 
+<!-- #################################### FORMS START ######################################################-->  
+ <hr>
+<div class="forms">
+ 
+		<div class="limit-order-form">
+		<!--<p>Limit Order</p>-->
+		<form method="post" action="/limitorders">
+ 
+			<div class="limit-currency-area">
+				<select id="fromCurrency" name="fromCurrency">
+					<option disabled selected>From Currency</option>
+					<option th:each="currency : ${availableCurrency}" th:value="${currency.currencyId}" th:text="${currency.currencyCode}"></option>
+				</select>
+ 
+				<select id="toCurrency" name="toCurrency">
+					<option disabled selected>To Currency</option>
+					<option th:each="currency : ${allCurrency}" th:value="${currency.currencyId}" th:text="${currency.currencyCode}"></option>
+				</select>
+			</div>
+ 
+			<div class="limit-currency-amt-area">
+				<input type="number" id="" name="fromQuantity" placeholder="From Amount" disabled>
+				<input type="number" id="toCurrencyQuantity" name="toCurrencyQuantity" placeholder="To Amount">			
+			</div>
+ 
+			<div class="limit-other-area">
+				<input class="long-field" type="number" id="fromPriceLimit" name="fromPriceLimit" placeholder="Maximum From Currency For Each To Currency">				
+			</div>
+ 
+			<div class="limit-other-area">
+				<div class ="exp-date"><p>Order Expiration Date</p></div>
+				<input type="date" id="expirationDate" name="expirationDate" placeholder="Expiration Date">
+			</div>
+ 
+			<input class="submit-limit-btn" type="submit" value="Place Limit Order">
+ 
+ 
+		</form>
+		</div>
+ 
+		<div class="market-order-form">
+		<!--<p>Market Order</p>-->
+		<form method="post" action="/marketorders">
+			<div class="limit-currency-area">
+				<select id="fromCurrency" name="fromCurrency">
+					<option disabled selected>From Currency</option>
+					<option th:each="currency : ${availableCurrency}" th:value="${currency.currencyId}" th:text="${currency.currencyCode}"></option>
+				</select>
+ 
+				<select id="toCurrency" name="toCurrency">
+					<option disabled selected>To Currency</option>
+					<option th:each="currency : ${allCurrency}" th:value="${currency.currencyId}" th:text="${currency.currencyCode}"></option>
+				</select>
+			</div>
+ 
+			<div class="limit-currency-amt-area">
+				<input type="number" id="fromQuantity" name="fromQuantity" placeholder="From Amount">
+				<input type="number" id="" name="toCurrencyQuantity" placeholder="To Amount" disabled>
+			</div>
+ 
+			<input class="submit-market-btn" type="submit" value="Place Market Order">
+		</form>
+		</div>
+ 
+	</div>
+ 
+	<hr>
+	<br>
+ 
+ 
+ 
+	<br>
+ 
+ 
+<!-- #################################### HISTORY START ######################################################-->  	
+		<div class="history">
+		<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Currency Pair</th>
+      <th>Buy/Sell</th>
+      <th>Units</th>
+      <th>Price</th>
+      <th>Profit/Loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2022-01-01</td>
+      <td>EUR/USD</td>
+      <td>Buy</td>
+      <td>1000</td>
+      <td>1.1250</td>
+      <td>+50.00</td>
+    </tr>
+    <tr>
+      <td>2022-02-01</td>
+      <td>USD/JPY</td>
+      <td>Sell</td>
+      <td>500</td>
+      <td>110.50</td>
+      <td>-25.00</td>
+    </tr>
+    <tr>
+      <td>2022-03-01</td>
+      <td>GBP/EUR</td>
+      <td>Buy</td>
+      <td>2000</td>
+      <td>1.1500</td>
+      <td>+100.00</td>
+    </tr>
+  </tbody>
+</table>
+ 
+	</div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    </div>
+   
+ 
+ 
+  <div class="col-sm-2 sidenav"></div>
+  </div>
+</div>
+<!---------- CONTENT ---------->
+ 
+ 
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@500&family=Nova+Mono&family=Space+Mono&display=swap');
+ 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+ 
+a, a:hover{
+  text-decoration: none;
+    color: inherit;
+}
+ 
+.navbar {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height:5vh;
+	width: 100vw;
+	background-color: #002b36;
+	margin: 0;
+	border-radius: 0;	
+	font-family: 'Cairo Play', cursive;
+	font-size: 3vmin;
+    color: #ffc43d;
+}
+ 
+.index-splash{	
+	height:95vh;
+	width: 100vw;
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;	 
+ 	background-color: #073642;	
+}
+ 
+.index-splash h1 {
+	font-size: 2.5vmin;
+	font-family: 'Nova Mono', monospace;
+	color: #eee8d5;		
+}
+ 
+.index-splash h1:hover {
+	color: #ffc43d;		
+}
+ 
+.index-splash p {
+	width: 50vw;
+	font-size: 1.8vmin;
+	font-family: 'Space Mono', monospace;
+	text-align: center;
+	color: #eee8d5;		
+	padding: 2vmin;
+	margin: 1vmin;
+	background-color: rgb(0,0,0,0.3);
+}
+ 
+.btn-area{
+	display:flex;	
+}
+ 
+.login-btn{
+	background-color: #ffc43d;
+	font-family: 'Nova Mono', monospace;
+	font-weight: bold;
+	font-size: 1.25vmin;
+	border: 0.1vmin solid #eee8d5;
+	border-radius: 0.2vmin;
+ 	color: #002b36;	
+	padding: 0.25vmin 1vmin 0.25vmin 1vmin;	
+	margin: 1vmin;
+	background-color: rgb(0,0,0,0.5);
+	border: 0.1vmin solid #eee8d5;
+	color: #eee8d5;	
+}
+ 
+.login-btn:hover{
+	color: #ffc43d;
+	border: 0.1vmin solid #ffc43d;
+}
+ 
+.form {	
+	display: flex;
+	justify-content: space-evenly;	
+	align-items: center;
+	border-radius: 1vmin;
+	padding: 2vmin;
+	background-image: url('/bg1.gif');
+ 	background-repeat: no-repeat;
+ 	background-size: cover;	
+ 	border: 0.1vmin solid #eee8d5;
+ 	margin-bottom: 10vh;
+}
+ 
+input {	
+	border: none;
+	outline: none;
+	background: transparent;
+	background-color: rgb(0,0,0,0.5);
+	width: 20vmin;	
+	border: 0.1vmin solid #eee8d5;
+	border-radius: 0.1vmin;	
+	padding: 0.5vmin;
+	margin:1vmin;
+	color: white;
+}
+ 
+.btn-group {
+	display:flex;
+	justify-content: center;
+}

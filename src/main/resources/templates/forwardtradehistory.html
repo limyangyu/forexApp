@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Register Page</title>
+</head>
+<body>
+
+<table>
+	<tr>
+		<th>Initiated By</th>
+		<th>Accepted By</th>
+		<th>From Currency</th>
+		<th>To Currency</th>
+		<th>Quantity in From Currency</th>
+		<th>Transaction Date</th>
+	</tr>
+	<tr th:each="completedforwardorder : ${session.completedForwardOrders}">
+		<td th:text="${completedforwardorder.initiatorUser.username}"></td>
+		<td th:text="${completedforwardorder.acceptorUser.username}"></td>
+		<td th:text="${completedforwardorder.fromCurrency.currencyName}"></td>
+		<td th:text="${completedforwardorder.toCurrency.currencyName}"></td>
+		<td th:text="${completedforwardorder.fromQuantity}"></td>
+		<td th:text="${completedforwardorder.transactionDate}"></td>
+	</tr>
+</table>
+
+</body>
+</html>

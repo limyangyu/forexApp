@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@500&family=Nova+Mono&family=Space+Mono&display=swap');
+ 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+ 
+a, a:hover{
+  text-decoration: none;
+    color: inherit;
+}
+ 
+.navbar {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height:5vh;
+	width: 100vw;
+	background-color: #002b36;
+	margin: 0;
+	border-radius: 0;	
+	font-family: 'Cairo Play', cursive;
+	font-size: 3vmin;
+    color: #ffc43d;
+}
+ 
+.index-splash{	
+	height:95vh;
+	width: 100vw;
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;		
+	background-image: url('/bg1.gif');
+ 	background-repeat: no-repeat;
+ 	background-size: cover;	 
+}
+ 
+.index-splash h1 {
+	font-size: 3.5vmin;
+	font-family: 'Nova Mono', monospace;
+	color: #eee8d5;		
+}
+ 
+.index-splash h1:hover {
+	color: #ffc43d;		
+}
+ 
+.index-splash p {
+	width: 50vw;
+	font-size: 1.8vmin;
+	font-family: 'Space Mono', monospace;
+	text-align: center;
+	color: #eee8d5;		
+	padding: 2vmin;
+	margin: 1vmin;
+	background-color: rgb(0,0,0,0.3);
+}
+ 
+.btn-area{
+	display:flex;	
+}
+ 
+.signup-btn, .login-btn{
+	background-color: #ffc43d;
+	font-family: 'Nova Mono', monospace;
+	font-weight: bold;
+	font-size: 1.5vmin;
+	border: 0.1vmin solid #eee8d5;
+	border-radius: 0.2vmin;
+ 	color: #002b36;	
+	height: 4.5vh;
+	width: 7vmax;	
+	margin: 1vmin;
+}
+ 
+.login-btn{
+	background-color: rgb(0,0,0,0.5);
+	border: 0.1vmin solid #eee8d5;
+	color: #eee8d5;	
+}
+ 
+.signup-btn:hover {
+	background-color: #73d2de;	
+}
+ 
+.login-btn:hover{
+	color: #ffc43d;
+	border: 0.1vmin solid #ffc43d;
+}

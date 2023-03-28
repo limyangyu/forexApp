@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@500&display=swap');
+ 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+ 
+a, a:hover{
+  text-decoration: none;
+    color: inherit;
+}
+ 
+.navbar {
+	display:flex;
+	justify-content:space-between;
+	align-items: center;
+	height:5vh;
+	width: 100vw;
+	background-color: #002b36;
+	margin: 0;
+	border-radius: 0;	
+	font-family: 'Cairo Play', cursive;
+	font-size: 3vmin;
+    color: #ffc43d;
+}
+
+.nav-logo{
+	margin-right:2vmin;
+}
+
+.nav-left{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav-right{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.navbar button{
+	font-family: 'Space Mono', monospace;	
+	font-size: 1.6vmin;
+	text-transform: uppercase; 		
+	padding: 0.25vmin 1vmin 0.25vmin 1vmin;	
+	margin: 1vmin;
+	color: #eee8d5;	
+	background-color:transparent;
+	border:none;
+}
+ 
+.navbar button:hover{
+	color: #ffc43d;
+}
+ 
+.alert {
+	height:5vh;
+	background-color: #073642;
+	color: red;	
+	margin: 0;
+	border-radius: 0;	
+}
+ 
+.sidenav{
+	height:90vh;
+	background-color: #002b36;
+}
+ 
+.content {
+	height:90vh;
+	width: 100vw;
+	background-color: #002b36;
+	color: white;	
+	overflow: auto;
+ 
+}
+ 
+footer {
+	height:5vh;	
+	background-color: #073642;
+	color: white;
+	padding: 2vmin;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+/* ===========================   FORM   ============================= */ 
+.forms {
+	display: flex;
+	justify-content: space-evenly;	
+	background-color: #073642;	
+	padding: 2vmin;
+}
+ 
+input {	
+	border: none;
+	outline: none;
+	background: transparent;
+	background-color: #002b36;
+	width: 10vw;	
+	background-color: #002b36;
+	border: 0.1vmin solid #eee8d5;
+	border-radius: 0.1vmin;
+	color: #eee8d5;
+	padding: 0.5vmin;
+}
+ 
+input[type="date"] {
+	background-color: #002b36;
+	width: 20.2vw;	
+	background-color: #002b36;
+	border: 0.1vmin solid #eee8d5;
+	border-radius: 0.1vmin;
+	color: #eee8d5;
+	padding: 0.5vmin;
+	font-size: 1.2vmin;
+	font-family: Arial, sans-serif;
+}
+ 
+input:disabled {
+  background-color: #073642;
+  cursor: not-allowed; 
+}
+ 
+select {
+  background-color: #586e75;
+  	background-color: #002b36;
+	width: 10vw;	
+	background-color: #002b36;
+	border: 0.1vmin solid #eee8d5;
+	border-radius: 0.1vmin;
+ 	color: #eee8d5;
+ 	padding: 0.2vmin;
+}
+ 
+option {
+	background-color: #586e75;
+    color: #eee8d5;
+}
+ 
+select option[disabled]:first-child {
+	color: #93a1a1;
+}
+ 
+.submit-limit-btn{
+	background-color: #b58900;
+    color: #eee8d5;
+    width: 20.2vw;
+    margin-top:0.5vmin;
+}
+ 
+.submit-market-btn{
+	background-color: #859900;
+    color: #eee8d5;
+    width: 20.2vw;
+    margin-top:0.5vmin;
+}
+
+.submit-market-btn:hover, .submit-limit-btn:hover{
+	background-color: #eee8d5;
+    color: #002b36;
+}
+ 
+.limit-order-form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(0,0,0,0.1);
+	padding:2vmin;
+	border-radius:0.5vmin;
+}
+ 
+.market-order-form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(0,0,0,0.1);
+	padding:2vmin;
+	border-radius:0.5vmin;
+}
+ 
+.long-field{
+	width: 20.2vw;
+}
+ 
+.exp-date{
+	margin: 1vmin 1vmin 0 1vmin;
+	display: flex;
+	justify-content: center;
+	color: #b58900;
+	font-size: 1.5vmin;
+	font-family: 'Space Mono', monospace;
+	text-transform: uppercase; 	
+}
+ 
+ 
+ 
+ 
+/* ==========================   TABLE   ============================= */ 
+.history , .open-orders{
+	display:flex;
+	justify-content: center;
+}
+ 
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  width:65vw;	
+ 
+}
+ 
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+/* ==========================   TABLE   ============================= */ 
+ 
+ 
+.index-splash{	
+	height:87vh;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+ 
+}
+ 
+ 
+.index-image{	
+	height:87vh;
+ 
+	 background-image: url('/bg1.gif');
+ 	 background-repeat: no-repeat;
+ 	 background-size: cover;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+@media screen and (max-width: 767px) {
+	.sidenav {
+		display: none
+	}
+}

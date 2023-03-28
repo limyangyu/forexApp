@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="register.css">  
+</head>
+ 
+<body>
+<!--  NAVBAR  -->
+<div class="navbar">
+	<a href="/">BULL.EX</a>
+</div>
+<!--  NAVBAR  -->
+ 
+<!--  CONTENT  -->
+<div class="index-splash"> 
+ 
+    <h1>GET STARTED</h1>
+ 
+	<div class = "form">
+		<form method="post" th:action="@{register}" th:object="${user}">			
+			<input type="text" th:field="*{username}" placeholder="Username" required>	
+			<br>	
+			<input type="email" th:field="*{email}" placeholder="Email" required>
+			<br>		
+			<input type="password" th:field="*{password}" placeholder="Password" required>	
+ 
+			<div class="btn-group">					
+				<button class="login-btn" type="submit">SIGN UP</button>		
+			</div>
+		</form>
+	</div>
+ 
+ </div>
+ 
+<!--  CONTENT  -->
+</body>
+</html>
