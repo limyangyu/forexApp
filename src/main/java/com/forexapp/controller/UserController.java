@@ -50,24 +50,8 @@ public class UserController {
 		return "login";
 	}
 	
-	@PostMapping("/login")
-	public String verifyUser(@RequestParam String username, @RequestParam String password, HttpSession session) {
-		
-		if (userService.verifyUserCredentials(username, password)) {
-			long userId = userService.findByUsername(username).getUserId();
-			session.setAttribute("username", username);
-			session.setAttribute("userId", userId);
-			return "redirect:/transferfunds";
-		}
-		else {
-			return "login";
-		}
-	}
-
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
-		
-		session.invalidate();
 		return "index";
 	}
 	
