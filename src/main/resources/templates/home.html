@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+
+  <title>Transfer Funds</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="basic.css">  
+
+</head>
+
+ 
+
+<body>
+
+<!--  NAVBAR  -->
+
+<div class="navbar">	
+
+	<div class ="nav-left">
+
+		<div class ="nav-logo"><a href="/">BULL.EX</a></div>			
+
+		<form action="/orders" method="get"><button type="submit">Spot Trade</button></form> 			
+
+		<a th:href="@{/newforwardorder}"><button>Forward Trade</button></a>
+
+		<a th:href="@{/activeforwardtradesdashboard}"><button>Active Forward Trades</button></a>
+
+		<a th:href="@{/pendingforwardtradesdashboard}"><button>Pending Forward Trades</button></a>
+
+	</div>
+
+	
+
+	<div class ="nav-right">
+
+		<form action="/transferfunds" method="get"><button  type="submit"> <span class="glyphicon glyphicon-user"></span> Wallet </button></form>      
+
+        <form action="/logout" method="get"><button  type="submit"> <span class="glyphicon glyphicon-log-out"></span> Logout </button></form>
+
+	</div>	
+
+</div>
+
+<!--  NAVBAR  -->
+
+ 
+
+<!--  CONTENT  -->
+
+<div class="index-splash">  
+
+ </div> 
+
+<!--  CONTENT  -->
+
+</body>
+
+</html>

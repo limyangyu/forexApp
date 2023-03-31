@@ -55,7 +55,7 @@ public class UserController {
 			long userId = userService.findByUsername(username).getUserId();
 			session.setAttribute("username", username);
 			session.setAttribute("userId", userId);
-			return "redirect:/transferfunds";
+			return "redirect:/home";
 		}
 		else {
 			return "login";
