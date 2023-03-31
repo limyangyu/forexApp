@@ -40,8 +40,7 @@ public class LimitOrderController {
 
 	@GetMapping("/orders")
 	public String showLimitOrderForm(HttpSession session, Model model) { 
-		String userName = (String) session.getAttribute("username");
-		long userId = userService.findByUsername(userName).getUserId();
+		long userId = (long) session.getAttribute("userId");
 	    
 	    List<Currency> userAvailCurrency = currencyService.findAllByUserId(userId);
 	    List<Currency> allCurrency = currencyService.findAll(); 
